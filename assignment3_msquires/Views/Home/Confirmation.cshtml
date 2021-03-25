@@ -1,0 +1,24 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "The movie " + Model.Title + " was submitted. Thank you!";
+
+}
+
+@model assignment3_msquires.Models.NewMovieResponse
+
+<div class="text-center">
+    @if (Model.Title == "Independence Day")
+    {
+        @:<h2>Sorry, but because Independence Day isn't the "Most American Movie Ever Made" (Rocky IV is), it will not be displayed in our film collection.</h2>
+        // Figure out how to not add it to the list
+    }
+    else
+    {
+        @:<h2>Your movie will be added to the collection shortly. Thank you!</h2>
+        // Figure out how to display it
+    }
+<p>Click <a asp-action="MovieList">here</a> to see full film collection.</p>
+</div>
+

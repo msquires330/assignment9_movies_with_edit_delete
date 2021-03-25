@@ -1,0 +1,47 @@
+﻿@{
+    ViewData["Title"] = "All Movies";
+}
+
+@model IEnumerable<assignment3_msquires.Models.NewMovieResponse>
+
+<div class="text-center">
+    <h1 class="display-4">Movies currently in The Joel Hilton Film Collection</h1>
+    <br />
+
+    <table class="styled-table">
+        <thead>
+            <tr><th>Category</th><th>Title</th><th>Year</th><th>Director</th><th>Rating</th><th>Edited</th><th>Lent To</th><th>Notes</th><th>Edit</th><th>Delete</th></tr>
+        </thead>
+
+        <tbody>
+            @foreach (assignment3_msquires.Models.NewMovieResponse x in Model)
+            {
+            <tr>
+                <td>@x.Category</td>
+                <td>@x.Title</td>
+                <td>@x.Year</td>
+                <td>@x.Director</td>
+                <td>@x.Rating</td>
+                <td>@x.Edited</td>
+                <td>@x.Lent</td>
+                <td>@x.Notes</td>
+                <td>
+                    <form asp-action="Edit1" method="post">
+                        <input type="hidden" name="Id" value="@x.id" />
+                        <button type="submit">Edit</button>
+                    </form>
+                </td>
+                <td>
+                    <form asp-action="Delete" method="post">
+                        <input type="hidden" name="Id" value="@x.id" />
+                            <button type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+    <br />
+    <a asp-action="NewMovie">Click here to add a new movie!</a>
+
+</div>

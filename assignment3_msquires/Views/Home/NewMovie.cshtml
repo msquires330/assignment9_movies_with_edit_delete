@@ -1,0 +1,87 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "New Movie";
+}
+
+@model assignment3_msquires.Models.NewMovieResponse
+<div class="text-center">
+    <h1 class="display-4">Enter A Movie</h1>
+    <br />
+    <form asp-action="NewMovie" method="post">
+        <div asp-validation-summary="All">
+                <label asp-for="Category">Category</label>
+                <select asp-for="Category">
+                    <option value="" selected="selected">Select One</option>
+                    <option value="Action">Action/Adventure</option>
+                    <option value="Comedy">Comedy</option>
+                    <option value="Drama">Drama</option>
+                    <option value="Family">Family</option>
+                    <option value="Horror">Horror/Suspense</option>
+                    <option value="Misc">Miscellaneous</option>
+                    <option value="Tv">Television</option>
+                    <option value="Comedy">Comedy</option>
+                    <option value="Vhs">VHS</option>
+                </select>
+            </div>
+            <br />
+            <div>
+                <label asp-for="Title">Title</label>
+                <input asp-for="Title" />
+            </div>
+            <br />
+            <div>
+                <label asp-for="Year">Year</label>
+                <input asp-for="Year" />
+            </div>
+            <br />
+            <div>
+                <label asp-for="Director">Director</label>
+                <input asp-for="Director" />
+            </div>
+            <br />
+            <div>
+                <label asp-for="Rating">Rating</label>
+                <select asp-for="Rating">
+                    <option value="" selected="selected">Select One</option>
+                    <option value="G">G</option>
+                    <option value="Pg">PG</option>
+                    <option value="Pg13">PG-13</option>
+                    <option value="TvPg">TV-PG</option>
+                    <option value="Tv14">TV-14</option>
+                    <option value="TVY7">TV-Y7</option>
+                    <option value="Nr">NR</option>
+                    <option value="Ur">UR</option>
+                    <option value="R">R</option>
+                </select>
+            </div>
+            <br />
+            <div>
+                <label asp-for="Edited">Edited</label>
+                <select asp-for="Edited">
+                    <option value="" selected="selected">Select One</option>
+                    <option value="Y">Yes</option>
+                    <option value="N">No</option>
+
+                </select>
+            </div>
+            <br />
+            <div>
+                <label asp-for="Lent">Lent To</label>
+                <input asp-for="Lent" />
+            </div>
+            <br />
+            <div>
+                <label asp-for="Notes">Notes</label>
+                <input asp-for="Notes" />
+            </div>
+            <br />
+            <div>
+                <a> 
+                    <input type="submit" value="Submit" id="submitButton" />
+                </a>
+            </div>
+
+    </form>
+</div>
